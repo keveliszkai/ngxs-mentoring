@@ -1,0 +1,21 @@
+<p>blog-details works!</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Content</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngIf="blog$ | async as item" [hidden]="loading$ | async">
+    <td>{{ item.id }}</td>
+    <td>{{ item.content }}</td>
+    <td>
+      <button [routerLink]="['/blogs']">Back</button>
+    </td>
+  </tr>
+  <tr class="loading" *ngIf="loading$ | async">
+    <td></td>
+    <td>Loading...</td>
+    <td></td>
+  </tr>
+</table>

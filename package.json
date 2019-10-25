@@ -24,6 +24,9 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@ngxs/devtools-plugin": "3.5.1",
+    "@ngxs/storage-plugin": "3.5.1",
+    "@ngxs/store": "3.5.1",
     "@angular-devkit/build-angular": "~0.801.0",
     "@angular/cli": "~8.1.0",
     "@angular/compiler-cli": "~8.1.0",
