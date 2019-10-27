@@ -13,6 +13,11 @@ import { BlogActions } from '../../../blog/store/blog.actions';
 export abstract class CrudState<T> {
   constructor(readonly service: any) {}
 
+  @Selector()
+  static model(state: CrudStateModel<any>) {
+    return state.model;
+  }
+
   getList(ctx: StateContext<CrudStateModel<T>>, { payload }: CrudActions.GetList) {
     const state = ctx.getState();
 

@@ -18,13 +18,13 @@ export class BlogState {
   constructor(readonly service: BlogService) {}
 
   @Selector()
-  static list(state: CrudStateModel<Blog>) {
-    return state.list;
+  static model(state: CrudStateModel<any>) {
+    return state.model;
   }
 
   @Selector()
-  static model(state: CrudStateModel<Blog>) {
-    return state.model;
+  static list(state: CrudStateModel<Blog>) {
+    return state.list;
   }
 
   @Selector()
