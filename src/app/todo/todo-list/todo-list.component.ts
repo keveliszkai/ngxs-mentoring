@@ -4,6 +4,7 @@ import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { GetList } from 'scrud-state';
+import { CustomFeature } from '../store/todo.actions';
 
 @Component({
   selector: 'app-todo-list',
@@ -21,5 +22,6 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetList(TodoCrudState));
+    this.store.dispatch(new CustomFeature({ value: 13 }));
   }
 }

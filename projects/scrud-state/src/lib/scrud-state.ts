@@ -9,7 +9,7 @@ import {
   GetModel,
 } from './actions';
 import { asArray, Dictionary, elvis, NGXS_META_KEY } from './internal';
-import { ScrudStateModel, StateSelector } from './models';
+import { ScrudStateModel, StateSelector } from './models/scrud-state.model';
 import { GetListError, GetModelError } from './errors';
 
 /**

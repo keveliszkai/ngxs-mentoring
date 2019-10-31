@@ -1,7 +1,7 @@
-import { EntityActionType, Payload } from './type-alias';
+import { EntityActionType, Payload } from '../type-alias';
 import { Type } from '@angular/core';
-import { ScrudState } from '../scrud-state';
-import { generateActionObject } from '../internal';
+import { ScrudState } from '../../scrud-state';
+import { generateActionObject } from '../../internal';
 
 export type GoToPagePayload =
   | { page: number }

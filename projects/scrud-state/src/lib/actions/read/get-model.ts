@@ -1,7 +1,7 @@
-import { generateActionObject } from '../internal';
-import { ScrudState } from '../scrud-state';
+import { generateActionObject } from '../../internal';
+import { ScrudState } from '../../scrud-state';
 import { Type } from '@angular/core';
-import { EntityActionType } from './type-alias';
+import { EntityActionType } from '../type-alias';
 
 export interface EntityGetModelAction {
   id: number | string;
