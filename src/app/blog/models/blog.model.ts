@@ -1,6 +1,7 @@
 export class Blog {
   id: number;
-  content: string;
+  title: string;
+  body: string;
 
   public static sayHello() {
     console.log('Hello!');

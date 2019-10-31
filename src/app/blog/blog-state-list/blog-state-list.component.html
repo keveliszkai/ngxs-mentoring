@@ -1,3 +1,4 @@
+<h1>CRUD</h1>
 <table style="width:100%">
   <tr>
     <th>Id</th>
@@ -8,7 +9,7 @@
     <td>{{ item.id }}</td>
     <td>{{ item.title }}</td>
     <td>
-      <button [routerLink]="['/blogs', item.id]">Details</button>
+      <button [routerLink]="['/crud/blogs', item.id]">Details</button>
     </td>
   </tr>
   <tr class="loading" *ngIf="loading$ | async">

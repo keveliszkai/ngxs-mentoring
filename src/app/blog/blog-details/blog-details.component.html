@@ -6,7 +6,7 @@
   </tr>
   <tr *ngIf="blog$ | async as item" [hidden]="loading$ | async">
     <td>{{ item.id }}</td>
-    <td>{{ item.content }}</td>
+    <td>{{ item.title }}</td>
     <td>
       <button [routerLink]="['/blogs']">Back</button>
     </td>

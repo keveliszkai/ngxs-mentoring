@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "crud-state": [
+        "dist/crud-state"
+      ],
+      "crud-state/*": [
+        "dist/crud-state/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

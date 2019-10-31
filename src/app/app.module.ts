@@ -9,6 +9,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { environment } from '../environments/environment';
 import { BlogModule } from './blog/blog.module';
 import { BlogState } from './blog/store/blog.state';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { BlogCrudState } from './blog/store/blog-crud.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,10 +19,11 @@ import { BlogState } from './blog/store/blog.state';
     AppRoutingModule,
     BlogModule,
     HttpClientModule,
-    NgxsModule.forRoot([BlogState]),
+    NgxsModule.forRoot([BlogState, BlogCrudState]),
     NgxsReduxDevtoolsPluginModule.forRoot({
       disabled: environment.production,
     }),
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
