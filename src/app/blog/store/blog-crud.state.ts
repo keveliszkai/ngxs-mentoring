@@ -1,13 +1,13 @@
-import { CrudState, CrudStateModel, defaultEntityState } from 'crud-state';
+import { ScrudState, ScrudStateModel, defaultEntityState } from 'scrud-state';
 import { Blog } from '../models/blog.model';
 import { State } from '@ngxs/store';
 import { BlogService } from '../services/blog.service';
 
-@State<CrudStateModel<Blog>>({
-  name: 'blogCrud',
+@State<ScrudStateModel<Blog>>({
+  name: 'blogScrud',
   defaults: defaultEntityState(),
 })
-export class BlogCrudState extends CrudState<Blog> {
+export class BlogCrudState extends ScrudState<Blog> {
   constructor(readonly service: BlogService) {
     super(BlogCrudState, service);
   }

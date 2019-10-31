@@ -3,7 +3,7 @@ import { BlogCrudState } from '../store/blog-crud.state';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Blog } from '../models/blog.model';
-import { GetList } from 'crud-state';
+import { GetList } from 'scrud-state';
 
 @Component({
   selector: 'app-blog-state-list',

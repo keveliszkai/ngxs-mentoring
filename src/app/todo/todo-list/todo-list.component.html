@@ -1,15 +1,14 @@
-<h1>SCRUD</h1>
 <table style="width:100%">
   <tr>
     <th>Id</th>
     <th>Content</th>
     <th>Actions</th>
   </tr>
-  <tr *ngFor="let item of blogs$ | async">
+  <tr *ngFor="let item of list$ | async">
     <td>{{ item.id }}</td>
     <td>{{ item.title }}</td>
     <td>
-      <button [routerLink]="['/crud/blogs', item.id]">Details</button>
+      <button [routerLink]="['/todos', item.id]">Details</button>
     </td>
   </tr>
   <tr class="loading" *ngIf="loading$ | async">

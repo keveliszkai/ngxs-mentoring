@@ -11,6 +11,8 @@ import { BlogModule } from './blog/blog.module';
 import { BlogState } from './blog/store/blog.state';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { BlogCrudState } from './blog/store/blog-crud.state';
+import { TodoCrudState } from './todo/store/todo-crud.state';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,8 +20,9 @@ import { BlogCrudState } from './blog/store/blog-crud.state';
     BrowserModule,
     AppRoutingModule,
     BlogModule,
+    TodoModule,
     HttpClientModule,
-    NgxsModule.forRoot([BlogState, BlogCrudState]),
+    NgxsModule.forRoot([BlogState, BlogCrudState, TodoCrudState]),
     NgxsReduxDevtoolsPluginModule.forRoot({
       disabled: environment.production,
     }),

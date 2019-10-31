@@ -1,18 +1,21 @@
-<h1>CRUD</h1>
+<h1>SCRUD</h1>
 <table style="width:100%">
   <tr>
     <th>Id</th>
+    <th>Title</th>
     <th>Content</th>
     <th>Actions</th>
   </tr>
   <tr *ngIf="blog$ | async as item" [hidden]="loading$ | async">
     <td>{{ item.id }}</td>
     <td>{{ item.title }}</td>
+    <td>{{ item.content }}</td>
     <td>
       <button [routerLink]="['/crud/blogs']">Back</button>
     </td>
   </tr>
   <tr class="loading" *ngIf="loading$ | async">
+    <td></td>
     <td></td>
     <td>Loading...</td>
     <td></td>

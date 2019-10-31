@@ -2,10 +2,6 @@ import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { Blog } from '../models/blog.model';
 import { BlogActions, BlogStateModel } from './blog.actions';
 import { BlogService } from '../services/blog.service';
-import { CrudStateModel } from '../../shared/crud/store/crud.state-model';
-import { CrudStateInterface } from '../../shared/crud/store/crud-state.interface';
-import { extend } from 'webdriver-js-extender';
-import { CrudState } from '../../shared/crud/store/crud.state';
 
 @State<BlogStateModel>({
   name: 'blog',
@@ -18,22 +14,22 @@ export class BlogState {
   constructor(readonly service: BlogService) {}
 
   @Selector()
-  static model(state: CrudStateModel<any>) {
+  static model(state: BlogStateModel) {
     return state.model;
   }
 
   @Selector()
-  static list(state: CrudStateModel<Blog>) {
+  static list(state: BlogStateModel) {
     return state.list;
   }
 
   @Selector()
-  static loading(state: CrudStateModel<Blog>) {
+  static loading(state: BlogStateModel) {
     return state.isLoading;
   }
 
   @Action(BlogActions.GetBlogs)
-  getBlogs(ctx: StateContext<CrudStateModel<Blog>>, { payload }: BlogActions.GetBlogs) {
+  getBlogs(ctx: StateContext<BlogStateModel>, { payload }: BlogActions.GetBlogs) {
     const state = ctx.getState();
 
     if (state.list.length) {
@@ -50,10 +46,7 @@ export class BlogState {
   }
 
   @Action(BlogActions.GetBlogsSucceeded)
-  getBlogsSucceeded(
-    ctx: StateContext<CrudStateModel<Blog>>,
-    { payload }: BlogActions.GetBlogsSucceeded,
-  ) {
+  getBlogsSucceeded(ctx: StateContext<BlogStateModel>, { payload }: BlogActions.GetBlogsSucceeded) {
     ctx.patchState({
       list: payload.list,
       isLoading: false,
@@ -61,7 +54,7 @@ export class BlogState {
   }
 
   @Action(BlogActions.GetBlog)
-  getBlog(ctx: StateContext<CrudStateModel<Blog>>, { payload }: BlogActions.GetBlog) {
+  getBlog(ctx: StateContext<BlogStateModel>, { payload }: BlogActions.GetBlog) {
     const state = ctx.getState();
     if (state.model && (state.model as any).id === payload.id) {
       ctx.dispatch(new BlogActions.GetBlogSucceeded({ model: state.model }));
@@ -77,10 +70,7 @@ export class BlogState {
   }
 
   @Action(BlogActions.GetBlogSucceeded)
-  getBlogSucceeded(
-    ctx: StateContext<CrudStateModel<Blog>>,
-    { payload }: BlogActions.GetBlogSucceeded,
-  ) {
+  getBlogSucceeded(ctx: StateContext<BlogStateModel>, { payload }: BlogActions.GetBlogSucceeded) {
     ctx.patchState({
       model: payload.model,
       isLoading: false,
@@ -88,7 +78,7 @@ export class BlogState {
   }
 
   @Action([BlogActions.GetBlogsFailed, BlogActions.GetBlogFailed])
-  getBlogsFailed(ctx: StateContext<CrudStateModel<Blog>>) {
+  getBlogsFailed(ctx: StateContext<BlogStateModel>) {
     ctx.patchState({
       isLoading: false,
     });
