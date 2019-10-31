@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { HttpClient } from '@angular/common/http';
+import { ServiceBase } from 'scrud-state';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TodoService {
+export class TodoService implements ServiceBase<Todo> {
   constructor(private readonly http: HttpClient) {}
 
-  public getAll(size: number): Observable<Todo[]> {
+  public getAll(params: { page: number; size: number }): Observable<Todo[]> {
     return this.http.get<Todo[]>(
-      `https://jsonplaceholder.typicode.com/todos?_page=1&_limit=${size}`,
+      `https://jsonplaceholder.typicode.com/todos?_page=${params.page}&_limit=${params.size}`,
     );
   }
 

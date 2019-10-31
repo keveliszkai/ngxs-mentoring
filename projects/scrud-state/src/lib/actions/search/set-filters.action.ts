@@ -1,7 +1,7 @@
 import { generateActionObject } from '../../internal';
 import { ScrudState } from '../../store/scrud.state';
 import { Type } from '@angular/core';
-import { EntityActionType } from '../type-alias';
+import { ActionTypes } from '../action-types.enum';
 import { ListFilter } from '../../models/list-filter.model';
 
 export interface SetFiltersAction {
@@ -10,6 +10,6 @@ export interface SetFiltersAction {
 
 export class SetFilters {
   constructor(target: Type<ScrudState<any>>, public payload: SetFiltersAction) {
-    return generateActionObject(EntityActionType.GetModel, target, payload);
+    return generateActionObject(ActionTypes.GetModel, target, payload);
   }
 }

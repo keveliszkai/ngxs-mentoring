@@ -1,7 +1,8 @@
 import { Type } from '@angular/core';
-import { EntityActionType } from '../actions';
+import { ActionTypes } from '../actions';
 import { NGXS_META_KEY } from '../internal';
 import { ScrudState } from './scrud.state';
+import { ServiceBase } from '../models/service-base.interface';
 
 // @dynamic
 export abstract class ScrudBaseState<T extends {}> {
@@ -9,15 +10,14 @@ export abstract class ScrudBaseState<T extends {}> {
 
   protected constructor(
     protected readonly storeClass: Type<ScrudState<T>>,
-    protected readonly service: any,
+    protected readonly service: ServiceBase<T>,
   ) {
     this.storePath = storeClass[NGXS_META_KEY].path;
-    this.setup(storeClass, Object.values(EntityActionType));
+    this.setup(storeClass, Object.values(ActionTypes));
   }
 
   protected static get staticStorePath(): string {
-    const that = this;
-    return that[NGXS_META_KEY].path;
+    return this[NGXS_META_KEY].path;
   }
 
   protected setup(storeClass: Type<ScrudState<T>>, actions: string[]) {

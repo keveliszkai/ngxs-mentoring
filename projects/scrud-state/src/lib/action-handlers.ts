@@ -8,9 +8,9 @@ import {
 import { NGXS_META_KEY } from './internal';
 import { ScrudState } from './store/scrud.state';
 import { Type } from '@angular/core';
-import { EntityActionType } from './actions/type-alias';
+import { ActionTypes } from './actions/action-types.enum';
 
-export const ofEntityAction = (state: Type<ScrudState<any>>, actionType: EntityActionType) => {
+export const ofEntityAction = (state: Type<ScrudState<any>>, actionType: ActionTypes) => {
   const statePath = state[NGXS_META_KEY].path;
   const type = `[${statePath}] ${actionType}`;
   return ofAction({
@@ -18,10 +18,7 @@ export const ofEntityAction = (state: Type<ScrudState<any>>, actionType: EntityA
   });
 };
 
-export const ofEntityActionDispatched = (
-  state: Type<ScrudState<any>>,
-  actionType: EntityActionType,
-) => {
+export const ofEntityActionDispatched = (state: Type<ScrudState<any>>, actionType: ActionTypes) => {
   const statePath = state[NGXS_META_KEY].path;
   const type = `[${statePath}] ${actionType}`;
   return ofActionDispatched({
@@ -29,10 +26,7 @@ export const ofEntityActionDispatched = (
   });
 };
 
-export const ofEntityActionSuccessful = (
-  state: Type<ScrudState<any>>,
-  actionType: EntityActionType,
-) => {
+export const ofEntityActionSuccessful = (state: Type<ScrudState<any>>, actionType: ActionTypes) => {
   const statePath = state[NGXS_META_KEY].path;
   const type = `[${statePath}] ${actionType}`;
   return ofActionSuccessful({
@@ -40,10 +34,7 @@ export const ofEntityActionSuccessful = (
   });
 };
 
-export const ofEntityActionErrored = (
-  state: Type<ScrudState<any>>,
-  actionType: EntityActionType,
-) => {
+export const ofEntityActionErrored = (state: Type<ScrudState<any>>, actionType: ActionTypes) => {
   const statePath = state[NGXS_META_KEY].path;
   const type = `[${statePath}] ${actionType}`;
   return ofActionErrored({
@@ -51,10 +42,7 @@ export const ofEntityActionErrored = (
   });
 };
 
-export const ofEntityActionCompleted = (
-  state: Type<ScrudState<any>>,
-  actionType: EntityActionType,
-) => {
+export const ofEntityActionCompleted = (state: Type<ScrudState<any>>, actionType: ActionTypes) => {
   const statePath = state[NGXS_META_KEY].path;
   const type = `[${statePath}] ${actionType}`;
   return ofActionCompleted({

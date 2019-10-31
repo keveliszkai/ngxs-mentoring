@@ -1,7 +1,7 @@
 import { generateActionObject } from '../internal';
 import { ScrudState } from '../store/scrud.state';
 import { Type } from '@angular/core';
-import { EntityActionType } from './type-alias';
+import { ActionTypes } from './action-types.enum';
 
 export interface EntitySetErrorAction {
   payload: Error;
@@ -15,6 +15,6 @@ export class SetError {
    * @param error The error that describes the error state
    */
   constructor(target: Type<ScrudState<any>>, error: Error | undefined) {
-    return generateActionObject(EntityActionType.SetError, target, error);
+    return generateActionObject(ActionTypes.SetError, target, error);
   }
 }

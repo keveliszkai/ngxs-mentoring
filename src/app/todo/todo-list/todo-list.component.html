@@ -17,3 +17,13 @@
     <td></td>
   </tr>
 </table>
+
+<div *ngIf="paginateObject$ | async as paginateObject">
+  <button (click)="goToPage(paginateObject.currentPage - 1)">
+    {{ paginateObject.currentPage - 1 }}
+  </button>
+  <button (click)="goToPage(paginateObject.currentPage)">{{ paginateObject.currentPage }}</button>
+  <button (click)="goToPage(paginateObject.currentPage + 1)">
+    {{ paginateObject.currentPage + 1 }}
+  </button>
+</div>

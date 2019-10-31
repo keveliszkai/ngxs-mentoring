@@ -1,7 +1,7 @@
 import { generateActionObject } from '../internal';
 import { ScrudState } from '../store/scrud.state';
 import { Type } from '@angular/core';
-import { EntityActionType } from './type-alias';
+import { ActionTypes } from './action-types.enum';
 
 export class Reset {
   /**
@@ -10,6 +10,6 @@ export class Reset {
    * @see defaultEntityState
    */
   constructor(target: Type<ScrudState<any>>) {
-    return generateActionObject(EntityActionType.Reset, target);
+    return generateActionObject(ActionTypes.Reset, target);
   }
 }

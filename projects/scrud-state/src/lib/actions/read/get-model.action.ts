@@ -1,15 +1,14 @@
-import { generateActionObject } from '../../internal';
 import { ScrudState } from '../../store/scrud.state';
 import { Type } from '@angular/core';
-import { EntityActionType, Payload } from '../type-alias';
+import { ActionTypes } from '../action-types.enum';
+import { BaseAction } from '../base.action';
 
-export type GetModelAction = Payload<GetModelActionPayload>;
 export interface GetModelActionPayload {
   id: number | string;
 }
 
-export class GetModel {
+export class GetModel extends BaseAction<any, GetModelActionPayload> {
   constructor(target: Type<ScrudState<any>>, payload: GetModelActionPayload) {
-    return generateActionObject(EntityActionType.GetModel, target, payload);
+    super(ActionTypes.GetModel, target, payload);
   }
 }

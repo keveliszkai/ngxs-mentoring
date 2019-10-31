@@ -37,7 +37,7 @@ export class BlogState {
     } else {
       ctx.patchState({ isLoading: true });
       this.service
-        .getAll(payload.size)
+        .getAll({ size: payload.size, page: 1 })
         .subscribe(
           list => ctx.dispatch(new BlogActions.GetBlogsSucceeded({ list })),
           () => ctx.dispatch(new BlogActions.GetBlogsFailed()),

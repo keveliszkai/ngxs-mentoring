@@ -34,6 +34,7 @@ export function generateActionObject<T>(fn: string, store: Type<ScrudState<T>>, 
  * @param path The path to the property
  */
 export function elvis(object: any, path: string): any | undefined {
+  // TODO: Eliminate
   return path ? path.split('.').reduce((value, key) => value && value[key], object) : object;
 }
 

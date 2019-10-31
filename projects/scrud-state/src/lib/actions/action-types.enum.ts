@@ -26,7 +26,7 @@ export interface Payload<T> {
 /**
  * Enum that contains all existing Actions for the Entity State adapter.
  */
-export enum EntityActionType {
+export enum ActionTypes {
   GetModel = 'getModel',
   GetList = 'getList',
   CreateModel = 'createModel',
