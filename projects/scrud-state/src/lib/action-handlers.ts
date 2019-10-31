@@ -6,7 +6,7 @@ import {
   ofActionSuccessful,
 } from '@ngxs/store';
 import { NGXS_META_KEY } from './internal';
-import { ScrudState } from './scrud-state';
+import { ScrudState } from './store/scrud.state';
 import { Type } from '@angular/core';
 import { EntityActionType } from './actions/type-alias';
 

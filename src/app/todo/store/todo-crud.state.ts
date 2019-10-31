@@ -15,6 +15,6 @@ export class TodoCrudState extends ScrudState<Todo> {
 
   @Action(CustomFeature)
   customFeature(ctx: StateContext<TodoCrudState>, { payload }: CustomFeature) {
-    alert(payload.value);
+    console.log(payload.value);
   }
 }

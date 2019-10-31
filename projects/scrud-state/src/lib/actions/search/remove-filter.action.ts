@@ -1,14 +1,14 @@
 import { generateActionObject } from '../../internal';
-import { ScrudState } from '../../scrud-state';
+import { ScrudState } from '../../store/scrud.state';
 import { Type } from '@angular/core';
 import { EntityActionType } from '../type-alias';
 
-export interface EntityGetModelAction {
-  id: number | string;
+export interface RemoveFilterAction {
+  key: string;
 }
 
-export class GetModel {
-  constructor(target: Type<ScrudState<any>>, public payload: EntityGetModelAction) {
+export class RemoveFilter {
+  constructor(target: Type<ScrudState<any>>, public payload: RemoveFilterAction) {
     return generateActionObject(EntityActionType.GetModel, target, payload);
   }
 }

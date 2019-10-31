@@ -1,4 +1,4 @@
-import { ScrudState } from './scrud-state';
+import { ScrudState } from './store/scrud.state';
 import { Type } from '@angular/core';
 
 /**
