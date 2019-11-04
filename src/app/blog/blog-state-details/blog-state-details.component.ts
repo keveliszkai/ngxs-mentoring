@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Blog } from '../models/blog.model';
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute } from '@angular/router';
-import { GetModel } from 'scrud-state';
+import { GetModel } from '@stilldesign/scrud';
 
 @Component({
   selector: 'app-blog-state-details',

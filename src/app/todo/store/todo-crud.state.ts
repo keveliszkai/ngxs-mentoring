@@ -1,4 +1,4 @@
-import { ScrudState, ScrudStateModel, defaultEntityState } from 'scrud-state';
+import { ScrudState, ScrudStateModel, defaultState } from '@stilldesign/scrud';
 import { Todo } from '../models/todo.model';
 import { State, Action, StateContext } from '@ngxs/store';
 import { TodoService } from '../services/todo.service';
@@ -6,7 +6,7 @@ import { CustomFeature } from './todo.actions';
 
 @State<ScrudStateModel<Todo>>({
   name: 'todoScrud',
-  defaults: defaultEntityState(),
+  defaults: defaultState(),
 })
 export class TodoCrudState extends ScrudState<Todo> {
   constructor(readonly service: TodoService) {

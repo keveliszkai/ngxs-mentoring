@@ -26,4 +26,12 @@
   <button (click)="goToPage(paginateObject.currentPage + 1)">
     {{ paginateObject.currentPage + 1 }}
   </button>
+  |
+  <button (click)="setPageSize(10)">10</button>
+  <button (click)="setPageSize(25)">25</button>
+  <button (click)="setPageSize(50)">50</button>
+  |
+  <button (click)="setSearch('Search Text')">Set search to 'Search Text'</button>
+  |
+  <button (click)="reset()">Reset</button>
 </div>

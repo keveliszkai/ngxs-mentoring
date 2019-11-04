@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { HttpClient } from '@angular/common/http';
-import { ServiceBase } from 'scrud-state';
+import { ServiceBase } from '@stilldesign/components';
 
 @Injectable({
   providedIn: 'root',
