@@ -1,4 +1,4 @@
-import { ScrudState, ScrudStateModel, defaultEntityState } from 'scrud-state';
+import { ScrudState, ScrudStateModel, defaultEntityState } from '@stilldesign/scrud';
 import { Todo } from '../models/todo.model';
 import { State, Action, StateContext } from '@ngxs/store';
 import { TodoService } from '../services/todo.service';

@@ -3,7 +3,7 @@ import { TodoCrudState } from '../store/todo-crud.state';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
-import { GetList } from 'scrud-state';
+import { GetList } from '@stilldesign/scrud';
 import { CustomFeature } from '../store/todo.actions';
 
 @Component({

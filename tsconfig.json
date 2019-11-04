@@ -14,8 +14,26 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "scrud-state": ["dist/scrud-state"],
-      "scrud-state/*": ["dist/scrud-state/*"]
+      "@stilldesign/common": ["../core-ui/dist/common"],
+      "@stilldesign/common/*": ["../core-ui/dist/common/*"],
+      "@stilldesign/api": ["../core-ui/dist/api"],
+      "@stilldesign/api/*": ["../core-ui/dist/api/*"],
+      "@stilldesign/notification": ["../core-ui/dist/notification"],
+      "@stilldesign/notification/*": ["../core-ui/dist/notification/*"],
+      "@stilldesign/components": ["../core-ui/dist/components"],
+      "@stilldesign/components/*": ["../core-ui/dist/components/*"],
+      "@stilldesign/language": ["../core-ui/dist/language"],
+      "@stilldesign/language/*": ["../core-ui/dist/language/*"],
+      "@stilldesign/authentication": ["../core-ui/dist/authentication"],
+      "@stilldesign/authentication/*": ["../core-ui/dist/authentication/*"],
+      "@stilldesign/cache": ["../core-ui/dist/cache"],
+      "@stilldesign/cache/*": ["../core-ui/dist/cache/*"],
+      "@stilldesign/confirmation": ["../core-ui/dist/confirmation"],
+      "@stilldesign/confirmation/*": ["../core-ui/dist/confirmation/*"],
+      "@stilldesign/admin-common": ["../core-ui/dist/admin-common"],
+      "@stilldesign/admin-common/*": ["../core-ui/dist/admin-common/*"],
+      "@stilldesign/scrud": ["../core-ui/dist/scrud"],
+      "@stilldesign/scrud/*": ["../core-ui/dist/scrud/*"]
     }
   },
   "angularCompilerOptions": {

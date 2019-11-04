@@ -4,7 +4,7 @@ import { TodoCrudState } from '../store/todo-crud.state';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { ActivatedRoute } from '@angular/router';
-import { GetModel } from 'scrud-state';
+import { GetModel } from '@stilldesign/scrud';
 
 @Component({
   selector: 'app-todo-details',

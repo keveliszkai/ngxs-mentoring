@@ -1,4 +1,4 @@
-import { ScrudState, ScrudStateModel, defaultEntityState } from 'scrud-state';
+import { ScrudState, ScrudStateModel, defaultEntityState } from '@stilldesign/scrud';
 import { Blog } from '../models/blog.model';
 import { State } from '@ngxs/store';
 import { BlogService } from '../services/blog.service';
