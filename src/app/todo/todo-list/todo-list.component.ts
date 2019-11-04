@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { ScrudListComponent } from '@stilldesign/scrud';
 import { PaginateObject } from '@stilldesign/common';
+import { tap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -21,12 +23,29 @@ export class TodoListComponent extends ScrudListComponent<Todo> implements OnIni
   @Select(TodoCrudState.paginateObject)
   public paginateObject$: Observable<PaginateObject>;
 
-  constructor(readonly store: Store) {
+  constructor(
+    readonly store: Store,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+  ) {
     super(store, TodoCrudState);
   }
 
   public ngOnInit() {
     super.ngOnInit();
+
+    // TODO: Move this to the abstract
+    this.store
+      .select(TodoCrudState.listParameters)
+      .pipe(
+        tap(params =>
+          this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: params,
+          }),
+        ),
+      )
+      .subscribe();
   }
 
   public ngOnDestroy() {
