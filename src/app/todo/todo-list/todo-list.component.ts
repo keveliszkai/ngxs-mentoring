@@ -1,51 +1,29 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { TodoCrudState } from '../store/todo-crud.state';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { ScrudListComponent } from '@stilldesign/scrud';
-import { PaginateObject } from '@stilldesign/common';
-import { tap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent extends ScrudListComponent<Todo> implements OnInit, OnDestroy {
-  @Select(TodoCrudState.list)
-  public list$: Observable<Todo[]>;
-
-  @Select(TodoCrudState.loading)
-  public loading$: Observable<boolean>;
-
-  @Select(TodoCrudState.paginateObject)
-  public paginateObject$: Observable<PaginateObject>;
+  public value;
 
   constructor(
-    readonly store: Store,
-    private readonly route: ActivatedRoute,
-    private readonly router: Router,
+    protected readonly store: Store,
+    protected readonly route: ActivatedRoute,
+    protected readonly router: Router,
   ) {
-    super(store, TodoCrudState);
+    super(store, TodoCrudState, route, router);
   }
 
   public ngOnInit() {
     super.ngOnInit();
-
-    // TODO: Move this to the abstract
-    this.store
-      .select(TodoCrudState.listParameters)
-      .pipe(
-        tap(params =>
-          this.router.navigate([], {
-            relativeTo: this.route,
-            queryParams: params,
-          }),
-        ),
-      )
-      .subscribe();
   }
 
   public ngOnDestroy() {

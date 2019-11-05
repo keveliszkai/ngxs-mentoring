@@ -13,6 +13,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { BlogCrudState } from './blog/store/blog-crud.state';
 import { TodoCrudState } from './todo/store/todo-crud.state';
 import { TodoModule } from './todo/todo.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { TodoModule } from './todo/todo.module';
     AppRoutingModule,
     BlogModule,
     TodoModule,
+    FormsModule,
     HttpClientModule,
     NgxsModule.forRoot([BlogState, BlogCrudState, TodoCrudState]),
     NgxsReduxDevtoolsPluginModule.forRoot({
