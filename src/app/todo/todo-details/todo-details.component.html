@@ -6,7 +6,7 @@
     <th>Completed</th>
     <th>Actions</th>
   </tr>
-  <tr *ngIf="list$ | async as item" [hidden]="loading$ | async">
+  <tr *ngIf="model$ | async as item" [hidden]="loading$ | async">
     <td>{{ item.id }}</td>
     <td>{{ item.title }}</td>
     <td>{{ item.completed }}</td>

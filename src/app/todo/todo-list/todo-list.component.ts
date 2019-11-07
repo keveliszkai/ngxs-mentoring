@@ -12,8 +12,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent extends ScrudListComponent<Todo> implements OnInit, OnDestroy {
-  public value;
-
   constructor(
     protected readonly store: Store,
     protected readonly route: ActivatedRoute,

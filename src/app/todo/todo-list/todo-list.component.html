@@ -31,7 +31,7 @@
   <button (click)="setPageSize(25)">25</button>
   <button (click)="setPageSize(50)">50</button>
   |
-  <input type="text" [ngModel]="value" (ngModelChange)="setSearch($event)" />
+  <input type="text" [ngModel]="search$ | async" (ngModelChange)="setSearch($event)" />
   |
   <button (click)="reset()">Reset</button>
 </div>
