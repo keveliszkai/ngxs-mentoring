@@ -23,4 +23,8 @@ export class TodoService implements ServiceBase<Todo> {
   public store(model: Todo): Observable<Todo> {
     return this.http.post<Todo>(`https://jsonplaceholder.typicode.com/todos`, model);
   }
+
+  public delete(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
 }

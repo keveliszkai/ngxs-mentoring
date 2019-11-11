@@ -9,6 +9,7 @@
     <td>{{ item.title }}</td>
     <td>
       <button [routerLink]="['/todos', item.id]">Details</button>
+      <button (click)="delete(item.id)">Delete</button>
     </td>
   </tr>
   <tr class="loading" *ngIf="loading$ | async">
