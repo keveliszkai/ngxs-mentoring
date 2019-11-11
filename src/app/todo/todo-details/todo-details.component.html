@@ -1,23 +1,2 @@
 <h1>SCRUD</h1>
-<table style="width:100%">
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Completed</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngIf="model$ | async as item" [hidden]="loading$ | async">
-    <td>{{ item.id }}</td>
-    <td>{{ item.title }}</td>
-    <td>{{ item.completed }}</td>
-    <td>
-      <button [routerLink]="['/todos']">Back</button>
-    </td>
-  </tr>
-  <tr class="loading" *ngIf="loading$ | async">
-    <td></td>
-    <td></td>
-    <td>Loading...</td>
-    <td></td>
-  </tr>
-</table>
+<app-todo-page [mode]="mode" [model]="model$ | async"></app-todo-page>

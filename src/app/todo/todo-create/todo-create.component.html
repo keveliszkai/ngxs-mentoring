@@ -1,0 +1,3 @@
+<h1>SCRUD CREATE</h1>
+<app-todo-page [mode]="mode" [model]="model" (modelChanged)="onChange($event)"></app-todo-page>
+<button [disabled]="!(model$ | async)" (click)="submit()">Submit</button>

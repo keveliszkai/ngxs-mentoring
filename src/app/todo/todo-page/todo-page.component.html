@@ -1,0 +1,31 @@
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Completed</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngIf="model" [formGroup]="form">
+    <td>
+      id
+      <input type="text" formControlName="id" />
+    </td>
+    <td>
+      title
+      <input type="text" formControlName="title" />
+    </td>
+    <td>
+      completed
+      <input type="checkbox" formControlName="completed" />
+    </td>
+    <td>
+      <button [routerLink]="['/todos']">Back</button>
+    </td>
+  </tr>
+  <tr class="loading" *ngIf="loading$ | async">
+    <td></td>
+    <td></td>
+    <td>Loading...</td>
+    <td></td>
+  </tr>
+</table>

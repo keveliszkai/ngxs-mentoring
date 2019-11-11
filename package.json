@@ -23,7 +23,8 @@
     "@angular/router": "8.2.12",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "lodash": "4.17.15"
   },
   "devDependencies": {
     "@angular-devkit/build-ng-packagr": "~0.801.3",
@@ -36,6 +37,7 @@
     "@angular/compiler-cli": "~8.1.0",
     "@angular/language-service": "~8.1.0",
     "@types/node": "~8.9.4",
+    "@types/lodash": "4.14.146",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.0.0",

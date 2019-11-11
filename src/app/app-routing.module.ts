@@ -6,6 +6,7 @@ import { BlogStateListComponent } from './blog/blog-state-list/blog-state-list.c
 import { BlogStateDetailsComponent } from './blog/blog-state-details/blog-state-details.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoDetailsComponent } from './todo/todo-details/todo-details.component';
+import { TodoCreateComponent } from './todo/todo-create/todo-create.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'todos',
     component: TodoListComponent,
+  },
+  {
+    path: 'todos/create',
+    component: TodoCreateComponent,
   },
   {
     path: 'todos/:id',

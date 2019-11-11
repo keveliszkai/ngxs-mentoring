@@ -5,10 +5,12 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoCreateComponent } from './todo-create/todo-create.component';
+import { TodoPageComponent } from './todo-page/todo-page.component';
 
 @NgModule({
-  declarations: [TodoListComponent, TodoDetailsComponent],
-  imports: [CommonModule, BrowserModule, RouterModule, FormsModule],
+  declarations: [TodoListComponent, TodoDetailsComponent, TodoCreateComponent, TodoPageComponent],
+  imports: [CommonModule, BrowserModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
 export class TodoModule {}
