@@ -7,6 +7,7 @@ import { BlogStateDetailsComponent } from './blog/blog-state-details/blog-state-
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoDetailsComponent } from './todo/todo-details/todo-details.component';
 import { TodoCreateComponent } from './todo/todo-create/todo-create.component';
+import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'todos/:id',
-    component: TodoDetailsComponent,
+    component: TodoEditComponent,
   },
   {
     path: 'crud/blogs',

@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { ScrudPageComponent } from '@stilldesign/scrud';
 import { Todo } from '../models/todo.model';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import * as _ from 'lodash';
 
 @Component({
@@ -17,7 +17,7 @@ export class TodoPageComponent extends ScrudPageComponent<Todo> implements OnCha
   public modelToForm(model: Todo): any {
     return this.fb.group({
       id: model.id,
-      title: model.title,
+      title: [model.title, Validators.required],
       completed: model.completed,
     });
   }

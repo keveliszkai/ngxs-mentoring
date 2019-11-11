@@ -8,9 +8,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoCreateComponent } from './todo-create/todo-create.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
 
 @NgModule({
-  declarations: [TodoListComponent, TodoDetailsComponent, TodoCreateComponent, TodoPageComponent],
+  declarations: [TodoListComponent, TodoDetailsComponent, TodoCreateComponent, TodoPageComponent, TodoEditComponent],
   imports: [CommonModule, BrowserModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
 export class TodoModule {}

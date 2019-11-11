@@ -20,6 +20,10 @@ export class TodoService implements ServiceBase<Todo> {
     return this.http.get<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`);
   }
 
+  public updateById(model: Todo, id: number): Observable<Todo> {
+    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, model);
+  }
+
   public store(model: Todo): Observable<Todo> {
     return this.http.post<Todo>(`https://jsonplaceholder.typicode.com/todos`, model);
   }
